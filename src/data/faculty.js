@@ -1,4 +1,4 @@
-export const facultyData: Faculty[] = [
+export const facultyData: = [
   {
     id: "1",
     name: "Ai Bo, PhD",
