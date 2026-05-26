@@ -2497,3 +2497,27 @@ export const facultyData: Faculty[] = [
 
 export const allFocusAreas = Array.from(new Set(facultyData.flatMap(f => f.focusAreas))).sort();
 export const allUniversities = Array.from(new Set(facultyData.map(f => f.university))).sort();
+export const institutions = Array.from(new Set(facultyData.map(f => f.university)))
+  .map(inst => ({
+    institution: inst,
+    count: facultyData.filter(f => f.university === inst).length
+  })).sort((a, b) => b.count - a.count);
+export const clusters = [
+  { label: "Data Science & AI", count: facultyData.filter(f => f.focusAreas.includes("AI")).length, terms: ["AI", "Machine Learning"] },
+  { label: "Healthcare Informatics", count: facultyData.filter(f => f.focusAreas.includes("Healthcare")).length, terms: ["Health", "Medical"] }
+];
+export const keywords = [
+  { term: "Data", count: 54 }, { term: "Learning", count: 30 }, { term: "Systems", count: 33 }
+];
+export const titles = Array.from(new Set(facultyData.map(f => f.title)))
+  .map(t => ({
+    title: t,
+    count: facultyData.filter(f => f.title === t).length
+  })).sort((a, b) => b.count - a.count);
+export const summary = {
+  total_faculty: facultyData.length,
+  institution_count: institutions.length,
+  cluster_count: clusters.length,
+  top_keyword: "Data",
+  top_keyword_count: 54
+};
