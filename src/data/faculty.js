@@ -1,16 +1,3 @@
-export interface Faculty {
-  id: string;
-  name: string;
-  title: string;
-  university: string;
-  college: string;
-  department: string;
-  researchInterests: string;
-  focusAreas: string[];
-  publications?: string[];
-  profileUrl?: string;
-}
-
 export const facultyData: Faculty[] = [
   {
     id: "1",
