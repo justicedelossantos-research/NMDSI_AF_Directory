@@ -2494,7 +2494,6 @@ export const facultyData: = [
     profileUrl: "https://uwm.edu/engineering/people/dabagh-mahsa/"
   }
 ];
-
 export const allFocusAreas = Array.from(new Set(facultyData.flatMap(f => f.focusAreas))).sort();
 export const allUniversities = Array.from(new Set(facultyData.map(f => f.university))).sort();
 export const institutions = Array.from(new Set(facultyData.map(f => f.university)))
